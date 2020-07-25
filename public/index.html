@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Ussd worker test</title>
+  <title>Ussd worker</title>
   <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
   <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
   <header class="navbar">
-    <p class="navbar-brand">USSD worker test</p>
+    <p class="navbar-brand">USSD Worker in Action</p>
   </header>
 
   <main class="column col-8 col-md-12" id="app">
@@ -20,7 +20,7 @@
     <div class="form-group">
       <label class="form-label" for="ussd">USSD</label>
       <input class="form-input" id="ussd" type="text"
-        placeholder="*122# - 1 - 1"
+        placeholder="*123# - 1 - 1"
         v-model.trim="newUssdRequest"
         @keyup.enter="addUssdRequest">
     </div>
@@ -28,12 +28,12 @@
     <div class="form-group">
       <label class="form-label" for="type">Type</label>
       <input class="form-input" id="type" type="text"
-        placeholder="hormuud"
+        placeholder="Sim type"
         v-model.trim="newUssdRequestType"
         @keyup.enter="addUssdRequest">
     </div>
 
-    <button class="btn add-btn" @click="addUssdRequest">add</button>
+    <button class="btn add-btn" @click="addUssdRequest">Add</button>
 
     <table class="table">
       <thead>
