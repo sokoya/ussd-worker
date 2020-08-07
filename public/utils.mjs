@@ -1,4 +1,4 @@
-const baseURL = 'https://glo-9mobile-ussd.herokuapp.com'
+const baseURL = 'https://airtel-9mobile.herokuapp.com'
 
 export const http = {
   get: (url) => {
