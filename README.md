@@ -1,8 +1,6 @@
 # ussd-worker-test
 
-ussd-worker-test is dashboard for issuing ussd-request that should be fulfilled by USSD Worker.
-
-You can get USSD Worker at https://play.google.com/store/apps/details?id=com.tabsamo.ussdworker
+ussd-worker works for airtel and 9mobile.
 
 Requirements: Node js
 
