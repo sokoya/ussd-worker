@@ -56,6 +56,19 @@ app.get('/ussd-requests', (req, res) => {
   res.send(data)
 })
 
+// remove an item
+app.get('/remove', ( req, res ) => {
+    const { id } = req.query;
+    if( id ){
+      for( i in db ){
+        if( db[i].id.toString() === id ){
+            return db.splice(db[i]);
+        }
+      }
+    }
+    return false;
+})
+
 
 // Get single transaction detail.
 app.get('/get-transaction/', (req, res) => {

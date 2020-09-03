@@ -7,12 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Ussd worker</title>
   <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
   <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
   <header class="navbar">
-    <p class="navbar-brand">USSD for Airtel and 9mobile</p>
+    <p class="navbar-brand">USSD for MTN and GLO</p>
   </header>
 
   <main class="column col-8 col-md-12" id="app">
@@ -42,6 +43,7 @@
           <th>USSD</th>
           <th>Choices</th>
           <th>Result</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +53,11 @@
           <td>{{ussdRequest.code}}</td>
           <td>{{ussdRequest.choices}}</td>
           <td>{{ussdRequest.result || 'waiting...'}}</td>
+          <td>
+            <a title="Approve Manually" target="_blank" :href="'/ussd-requests/?id=' +ussdRequest.id"><i class="icon icon-check"></i></a> | 
+            <a title="Re process" :href="'/reprocess/?id='+ussdRequest.id"><i class="icon icon-refresh"></i></a> |
+            <button title="Remove Item" @click="removeElement(ussdRequest.id)"><i class="icon icon-delete"></i></button>
+          </td>
         </tr>
       </tbody>
     </table>

@@ -1,5 +1,6 @@
 import { http } from './utils.mjs'
 
+
 const app = new Vue({
   el: '#app',
   data: {
@@ -18,9 +19,13 @@ const app = new Vue({
       const [code, ...choices] = this.newUssdRequest.split('-').map(s => s.trim().toString())
       const type = this.newUssdRequestType
       const ussdRequest = await http.post('/ussd-requests', { id, code, choices, type })
-
       this.ussdRequests.push(ussdRequest)
       this.newUssdRequest = ''
+    },
+    removeElement: async function (index) {
+      const removeResponse = await http.get(`/remove?id=${index}`);
+      console.log( removeResponse );
+      refresh();
     }
   }
 })
