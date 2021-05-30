@@ -56,7 +56,7 @@
           <td>
             <a title="Approve Manually" target="_blank" :href="'/ussd-requests/?id=' +ussdRequest.id"><i class="icon icon-check"></i></a> | 
             <a title="Re process" :href="'/reprocess/?id='+ussdRequest.id"><i class="icon icon-refresh"></i></a> |
-            <button title="Remove Item" @click="removeElement(ussdRequest.id)"><i class="icon icon-delete"></i></button>
+            <a title="Delete This Transaction" :href="'/remove/?id='+ussdRequest.id"><i class="icon icon-delete"></i></a>
           </td>
         </tr>
       </tbody>
