@@ -5,7 +5,6 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const PORT= process.env.PORT || '8080' 
 const app = express();
-
 app.set("port", PORT);
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -34,6 +33,7 @@ app.get('/ussd-requests', (req, res) => {
   const { id, status, type } = req.query
   if(id){
     var result  = "Approved Manually";
+    // Send webhook
     for(let i in db) {
         if(db[i].id.toString() === id) {
           db[i] = { ...db[i], result, status: DONE }
@@ -61,9 +61,9 @@ app.get('/ussd-requests', (req, res) => {
 app.get('/remove', ( req, res ) => {
     const { id } = req.query;
     if( id ){
-      for( i in db ){
+      for( let i in db ){
         if( db[i].id.toString() === id ){
-            return db.splice(db[i]);
+            return db.splice(db[i], 1);
         }
       }
     }
