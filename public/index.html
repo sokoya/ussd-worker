@@ -52,7 +52,7 @@
           <td>{{ussdRequest.type}}</td>
           <td>{{ussdRequest.code}}</td>
           <td>{{ussdRequest.choices}}</td>
-          <td>{{ussdRequest.result || 'waiting...'}}</td>
+          <td>{{ussdRequest.result || 'loading...'}}</td>
           <td>
             <a title="Approve Manually" target="_blank" :href="'/ussd-requests/?id=' +ussdRequest.id"><i class="icon icon-check"></i></a> | 
             <a title="Re process" :href="'/reprocess/?id='+ussdRequest.id"><i class="icon icon-refresh"></i></a> |
