@@ -1,5 +1,5 @@
-const baseURL = 'https://airtel-9mobile.herokuapp.com'
-// const baseURL = 'https://ussd-worker-hmoj.vercel.app'
+// const baseURL = 'https://airtel-9mobile.herokuapp.com'
+const baseURL = ''
 
 export const http = {
   get: (url) => {
