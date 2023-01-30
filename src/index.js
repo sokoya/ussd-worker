@@ -108,7 +108,7 @@ app.put('/ussd-requests/:id', (req, res) => {
       const postData = JSON.stringify({'trans_id': req.body.id, 'remark': req.body.result})
       let trans_id = req.body.id;
       const options = {
-        hostname: trans_id.substring(0, 2) === 'PS' ? 'www.payscribe.ng' : 'www.gecharl.com',
+        hostname: 'app.payscribe.ng',
         path: '/webhook/ussd_response',
         method: 'POST',
         headers: {
